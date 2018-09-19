@@ -15,13 +15,13 @@ class DungeonCharacter {
     let damageRange: (min: Int, max: Int)
     let opponentHitChance: Double
     
-    init(name: String, hitPoints: Int, attackSpeed: Int, damageRange: (min: Int, max: Int)) {
+    init(name: String, hitPoints: Int, attackSpeed: Int, damageRange: (min: Int, max: Int), opponentHitChance: Double) {
         self.name = name
         self.hitPoints = hitPoints
         self.attackSpeed = attackSpeed
         self.damageRange.min = damageRange.min
         self.damageRange.max = damageRange.max
-        opponentHitChance = 0.5
+        self.opponentHitChance = opponentHitChance
     }
     
     func attack(enemy: DungeonCharacter) {

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		36262B79215216EC007F75BE /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36262B78215216EC007F75BE /* Hero.swift */; };
 		36262B7B21521A22007F75BE /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36262B7A21521A22007F75BE /* Monster.swift */; };
+		36262B7F215226A6007F75BE /* Ogre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36262B7E215226A6007F75BE /* Ogre.swift */; };
+		36262B8121522DC5007F75BE /* Gremlin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36262B8021522DC5007F75BE /* Gremlin.swift */; };
+		36262B8321522DD7007F75BE /* Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36262B8221522DD7007F75BE /* Skeleton.swift */; };
 		3638B20921516D4F00CB6F9D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638B20821516D4F00CB6F9D /* main.swift */; };
 		3638B21021516DD000CB6F9D /* DungeonCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638B20F21516DD000CB6F9D /* DungeonCharacter.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +31,9 @@
 /* Begin PBXFileReference section */
 		36262B78215216EC007F75BE /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		36262B7A21521A22007F75BE /* Monster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		36262B7E215226A6007F75BE /* Ogre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ogre.swift; sourceTree = "<group>"; };
+		36262B8021522DC5007F75BE /* Gremlin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gremlin.swift; sourceTree = "<group>"; };
+		36262B8221522DD7007F75BE /* Skeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skeleton.swift; sourceTree = "<group>"; };
 		3638B20521516D4F00CB6F9D /* PA3Task2_Mattappally */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PA3Task2_Mattappally; sourceTree = BUILT_PRODUCTS_DIR; };
 		3638B20821516D4F00CB6F9D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3638B20F21516DD000CB6F9D /* DungeonCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonCharacter.swift; sourceTree = "<group>"; };
@@ -67,6 +73,9 @@
 				3638B20F21516DD000CB6F9D /* DungeonCharacter.swift */,
 				36262B78215216EC007F75BE /* Hero.swift */,
 				36262B7A21521A22007F75BE /* Monster.swift */,
+				36262B7E215226A6007F75BE /* Ogre.swift */,
+				36262B8021522DC5007F75BE /* Gremlin.swift */,
+				36262B8221522DD7007F75BE /* Skeleton.swift */,
 			);
 			path = PA3Task2_Mattappally;
 			sourceTree = "<group>";
@@ -129,6 +138,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36262B8121522DC5007F75BE /* Gremlin.swift in Sources */,
+				36262B8321522DD7007F75BE /* Skeleton.swift in Sources */,
+				36262B7F215226A6007F75BE /* Ogre.swift in Sources */,
 				36262B7B21521A22007F75BE /* Monster.swift in Sources */,
 				3638B21021516DD000CB6F9D /* DungeonCharacter.swift in Sources */,
 				3638B20921516D4F00CB6F9D /* main.swift in Sources */,

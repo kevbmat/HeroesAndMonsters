@@ -13,11 +13,11 @@ class Monster: DungeonCharacter {
     let healRange: (min: Int, max: Int)
     
     init(name: String, hitPoints: Int, attackSpeed: Int, damageRange: (min: Int, max: Int),
-         chanceToHeal: Double, healRange: (min: Int, max: Int)) {
+         chanceToHeal: Double, healRange: (min: Int, max: Int), opponentHitChance: Double) {
         self.chanceToHeal = chanceToHeal
         self.healRange.min = healRange.min
         self.healRange.max = healRange.max
-        super.init(name: name, hitPoints: hitPoints, attackSpeed: attackSpeed, damageRange: (min: damageRange.min, max: damageRange.max))
+        super.init(name: name, hitPoints: hitPoints, attackSpeed: attackSpeed, damageRange: (min: damageRange.min, max: damageRange.max), opponentHitChance: opponentHitChance)
     }
     
     func heal() {
