@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3638B20921516D4F00CB6F9D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638B20821516D4F00CB6F9D /* main.swift */; };
+		3638B21021516DD000CB6F9D /* DungeonCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638B20F21516DD000CB6F9D /* DungeonCharacter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		3638B20521516D4F00CB6F9D /* PA3Task2_Mattappally */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PA3Task2_Mattappally; sourceTree = BUILT_PRODUCTS_DIR; };
 		3638B20821516D4F00CB6F9D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		3638B20F21516DD000CB6F9D /* DungeonCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonCharacter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				3638B20821516D4F00CB6F9D /* main.swift */,
+				3638B20F21516DD000CB6F9D /* DungeonCharacter.swift */,
 			);
 			path = PA3Task2_Mattappally;
 			sourceTree = "<group>";
@@ -94,6 +97,7 @@
 				TargetAttributes = {
 					3638B20421516D4F00CB6F9D = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -119,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3638B21021516DD000CB6F9D /* DungeonCharacter.swift in Sources */,
 				3638B20921516D4F00CB6F9D /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,7 +249,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -253,7 +258,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
