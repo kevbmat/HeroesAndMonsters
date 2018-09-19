@@ -21,12 +21,12 @@ class DungeonCharacter {
         self.attackSpeed = attackSpeed
         self.damageRange.min = damageRange.min
         self.damageRange.max = damageRange.max
-        opponentHitChance = 50
+        opponentHitChance = 0.5
     }
     
     func attack(enemy: DungeonCharacter) {
-        let chance = Double.random(in: 0...100)
-        if chance >= opponentHitChance {
+        let chance = Double.random(in: 0...1)
+        if chance <= opponentHitChance {
             let damage = Int.random(in: damageRange.min...damageRange.max)
             enemy.hitPoints -= damage
             print("You have dealt \(damage) damage!")

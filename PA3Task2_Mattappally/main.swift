@@ -10,3 +10,5 @@ import Foundation
 
 print("Hello, World!")
 
+var hero = Hero(name: "Sam", hitPoints: 50, attackSpeed: 4, damageRange: (min: 3, max: 8))
+hero.hitPoints -= 10

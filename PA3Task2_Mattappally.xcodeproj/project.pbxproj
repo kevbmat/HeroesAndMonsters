@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36262B79215216EC007F75BE /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36262B78215216EC007F75BE /* Hero.swift */; };
+		36262B7B21521A22007F75BE /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36262B7A21521A22007F75BE /* Monster.swift */; };
 		3638B20921516D4F00CB6F9D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638B20821516D4F00CB6F9D /* main.swift */; };
 		3638B21021516DD000CB6F9D /* DungeonCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638B20F21516DD000CB6F9D /* DungeonCharacter.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		36262B78215216EC007F75BE /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		36262B7A21521A22007F75BE /* Monster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
 		3638B20521516D4F00CB6F9D /* PA3Task2_Mattappally */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PA3Task2_Mattappally; sourceTree = BUILT_PRODUCTS_DIR; };
 		3638B20821516D4F00CB6F9D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3638B20F21516DD000CB6F9D /* DungeonCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonCharacter.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 			children = (
 				3638B20821516D4F00CB6F9D /* main.swift */,
 				3638B20F21516DD000CB6F9D /* DungeonCharacter.swift */,
+				36262B78215216EC007F75BE /* Hero.swift */,
+				36262B7A21521A22007F75BE /* Monster.swift */,
 			);
 			path = PA3Task2_Mattappally;
 			sourceTree = "<group>";
@@ -123,8 +129,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36262B7B21521A22007F75BE /* Monster.swift in Sources */,
 				3638B21021516DD000CB6F9D /* DungeonCharacter.swift in Sources */,
 				3638B20921516D4F00CB6F9D /* main.swift in Sources */,
+				36262B79215216EC007F75BE /* Hero.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
