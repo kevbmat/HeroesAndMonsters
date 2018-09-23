@@ -25,6 +25,13 @@ class Hero: DungeonCharacter {
         }
     }
     
+    init() {
+        chanceToBlock = 0.4
+        enemy = Monster()
+        turnsLeft = 4
+        super.init(name: "Hero", hitPoints: 40, attackSpeed: 3, damageRange: (min: 40, max: 80), opponentHitChance: 0.2)
+    }
+    
     init(name: String, hitPoints: Int, attackSpeed: Int, damageRange: (min: Int, max: Int), opponentHitChance: Double, chanceToBlock: Double, enemy: Monster) {
         self.chanceToBlock = chanceToBlock
         self.enemy = enemy
