@@ -9,18 +9,30 @@
 import Foundation
 
 class Hero: DungeonCharacter {
-    var chanceToBlock: Double = 0.4
+    var chanceToBlock: Double
     override var hitPoints: Int {
         didSet {
-            let chance = Double.random(in: 0...1)
-            if chance <= chanceToBlock {
-                print("The Hero has blocked the attack!")
-                hitPoints = oldValue
+            if hitPoints < oldValue {
+                let chance = Double.random(in: 0...1)
+                print(chance)
+                if chance <= chanceToBlock {
+                    print("You blocked the enemy attack!")
+                    hitPoints = oldValue
+                }
             }
         }
     }
     
+    init(name: String, hitPoints: Int, attackSpeed: Int, damageRange: (min: Int, max: Int), opponentHitChance: Double, chanceToBlock: Double) {
+        self.chanceToBlock = chanceToBlock
+        super.init(name: name, hitPoints: hitPoints, attackSpeed: attackSpeed, damageRange: (min: damageRange.min, max: damageRange.max), opponentHitChance: opponentHitChance)
+    }
+    
     func getName() -> String {
         return name
+    }
+    
+    func numberOfTurns(enemy: Monster) -> Int {
+        return attackSpeed / enemy.attackSpeed
     }
 }
