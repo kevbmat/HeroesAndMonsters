@@ -9,13 +9,24 @@
 import Foundation
 
 class HeroesVersusMonsters {
-    var enemy: Monster = Monster()
-    var user: Hero = Hero()
+    var enemy: Monster
+    var user: Hero
+    var gameOver: Bool
+    
+    init() {
+        enemy = Monster()
+        user = Hero()
+        gameOver = false
+    }
     
     func gameDriver() {
         introduction()
-        playerTurn()
-        computerTurn()
+        while !gameOver {
+            playerTurn()
+            if !gameOver {
+                computerTurn()
+            }
+        }
     }
     
     func introduction() {
@@ -55,9 +66,12 @@ class HeroesVersusMonsters {
     }
     
     func playerTurn() {
-        
         let turns = user.turns
         for i in 1...turns {
+            if user.hitPoints <= 0 || enemy.hitPoints <= 0 {
+                gameOver = true
+                endGame()
+            }
             displayTurnsAndStats(turnNumber: i, totalTurns: turns, currentPlayer: user, nextPlayer: enemy)
             print("\tPlease choose yoru attack from the following menu")
             print("\t\t1) Normal Attack")
@@ -98,8 +112,30 @@ class HeroesVersusMonsters {
     }
     
     func computerTurn() {
+        if user.hitPoints <= 0 || enemy.hitPoints <= 0 {
+            gameOver = true
+            endGame()
+        }
         displayTurnsAndStats(turnNumber: 1, totalTurns: 1, currentPlayer: enemy, nextPlayer: user)
         enemy.attack(enemy: &user)
         print()
+    }
+    
+    func endGame() {
+        if user.hitPoints <= 0 {
+            print("\(user.name) has died")
+        } else {
+            print("\(enemy.name) has died")
+        }
+        print("Would you like to play again? (y/n)")
+        let playAgainOptional = readLine()
+        if let playAgain = playAgainOptional {
+            if playAgain[playAgain.startIndex] == "y" || playAgain[playAgain.startIndex] == "Y" {
+                gameDriver()
+            } else {
+                print("Exiting game...Thanks for playing!")
+                exit(0)
+            }
+        }
     }
 }
