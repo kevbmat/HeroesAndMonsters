@@ -14,5 +14,5 @@ func introduction() {
     print("\t1) Warrior")
     print("\t2) Sorceress")
     print("\t3) Thief")
-    let optionalUserChoice = readLine()
+    // let optionalUserChoice = readLine()
 }

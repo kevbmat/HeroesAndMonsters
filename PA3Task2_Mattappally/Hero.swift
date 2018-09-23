@@ -10,6 +10,8 @@ import Foundation
 
 class Hero: DungeonCharacter {
     var chanceToBlock: Double
+    var enemy: Monster
+    var turnsLeft: Int
     override var hitPoints: Int {
         didSet {
             if hitPoints < oldValue {
@@ -23,16 +25,14 @@ class Hero: DungeonCharacter {
         }
     }
     
-    init(name: String, hitPoints: Int, attackSpeed: Int, damageRange: (min: Int, max: Int), opponentHitChance: Double, chanceToBlock: Double) {
+    init(name: String, hitPoints: Int, attackSpeed: Int, damageRange: (min: Int, max: Int), opponentHitChance: Double, chanceToBlock: Double, enemy: Monster) {
         self.chanceToBlock = chanceToBlock
+        self.enemy = enemy
+        turnsLeft = attackSpeed / enemy.attackSpeed
         super.init(name: name, hitPoints: hitPoints, attackSpeed: attackSpeed, damageRange: (min: damageRange.min, max: damageRange.max), opponentHitChance: opponentHitChance)
     }
     
     func getName() -> String {
         return name
-    }
-    
-    func numberOfTurns(enemy: Monster) -> Int {
-        return attackSpeed / enemy.attackSpeed
     }
 }
