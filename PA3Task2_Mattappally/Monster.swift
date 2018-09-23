@@ -30,9 +30,9 @@ class Monster: DungeonCharacter {
         if chance <= chanceToHeal {
             let heal = Int.random(in: healRange.min...healRange.max)
             hitPoints += heal
-            print("Enemy has healed, now has \(hitPoints) hitpoints!")
+            print("\(name) has healed up \(heal) hit points")
         } else {
-            print("Enemy has failed to heal")
+            print("\(name) has failed to heal at this time")
         }
     }
 }

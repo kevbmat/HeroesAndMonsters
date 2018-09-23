@@ -54,11 +54,9 @@ class HeroesVersusMonsters {
     }
     
     func playerTurn() {
-        var turns = user.turns
+        let turns = user.turns
         for i in 1...turns {
-            print("~~~~\(user.name)'s turn (\(i) of \(turns))~~~~")
-            print("\t\(user.name): \(user.hitPoints)")
-            print("\t\(enemy.name): \(enemy.hitPoints)\n")
+            displayTurnsAndStats(turnNumber: i, totalTurns: turns, currentPlayer: user, nextPlayer: enemy)
             print("\tPlease choose yoru attack from the following menu")
             print("\t\t1) Normal Attack")
             print("\t\t2) Special Attack")
@@ -70,22 +68,35 @@ class HeroesVersusMonsters {
             }
             switch numChoice {
             case "2":
-                specialAttack()
+                doSpecialAttack()
             case "3":
+                print("Exiting game...")
                 exit(0)
             default:
-                normalAttack()
+                doNormalAttack()
             }
         }
     }
     
-    func normalAttack() {
+    func displayTurnsAndStats(turnNumber: Int, totalTurns: Int, currentPlayer: DungeonCharacter, nextPlayer: DungeonCharacter) {
+        print("~~~~\(currentPlayer.name)'s turn (\(turnNumber) of \(totalTurns))~~~~")
+        print("\t\(currentPlayer.name): \(currentPlayer.hitPoints) hit points")
+        print("\t\(nextPlayer.name): \(nextPlayer.hitPoints) hit points\n")
+    }
+    
+    func doNormalAttack() {
         user.attack(enemy: &enemy)
+        enemy.heal()
         print("\t\(user.name): \(user.hitPoints)")
         print("\t\(enemy.name): \(enemy.hitPoints)\n")
     }
     
-    func specialAttack() {
-        
+    func doSpecialAttack() {
+        user.specialAttack()
+    }
+    
+    func computerTurn() {
+        displayTurnsAndStats(turnNumber: 1, totalTurns: 1, currentPlayer: enemy, nextPlayer: user)
+        enemy.attack(enemy: &user)
     }
 }

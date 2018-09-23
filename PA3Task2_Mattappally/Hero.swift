@@ -42,4 +42,8 @@ class Hero: DungeonCharacter {
     func getName() -> String {
         return name
     }
+    
+    func specialAttack() {
+        print("To be implemented by children")
+    }
 }

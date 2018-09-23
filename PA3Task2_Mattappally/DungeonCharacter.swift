@@ -24,7 +24,7 @@ class DungeonCharacter {
         self.opponentHitChance = opponentHitChance
     }
     
-    func attack(enemy: inout Monster) {
+    func attack(enemy: inout DungeonCharacter) {
         let chance = Double.random(in: 0...1)
         if chance <= opponentHitChance {
             let damage = Int.random(in: damageRange.min...damageRange.max)

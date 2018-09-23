@@ -13,14 +13,15 @@ class Thief: Hero {
         super.init(name: name, hitPoints: 75, attackSpeed: 6, damageRange: (min: 20, max: 40), opponentHitChance: 0.8, chanceToBlock: 0.4, enemy: enemy)
     }
     
-    func surpriseAttack() {
+    override func specialAttack() {
+        print("\(name) is about to attempt at surprise attack...")
         let attackChance = Double.random(in: 0...1)
-        if attackChance <= 0.4 {
-            print("The surprise attack got caught! Attack failed :(")
-        } else if attackChance > 0.4 && attackChance <= 0.8 {
-            print("The surprise attack was never seen! You get 1 more turn.")
+        if attackChance <= 0.2 {
+            print("\(name)'s surprise attack was caught by \(enemy.name)!")
+        } else if attackChance > 0.2 && attackChance <= 0.6 {
+            print("\(name)'s surprise attack was never seen! \(name) gets +1 turn")
         } else {
-            print("Suprise attack somewhat succesful. You play a normal attack.")
+            print("\(name)'s suprise attack halfway succeeds, plays a normal attack.")
         }
     }
 }

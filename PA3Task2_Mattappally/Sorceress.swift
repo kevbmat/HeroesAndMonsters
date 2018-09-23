@@ -13,8 +13,10 @@ class Sorceress: Hero {
         super.init(name: name, hitPoints: 75, attackSpeed: 6, damageRange: (min: 20, max: 40), opponentHitChance: 0.8, chanceToBlock: 0.4, enemy: enemy)
     }
     
-    func heal() {
+    override func specialAttack() {
         let healPoints = Int.random(in: 20...40)
         hitPoints += healPoints
+        print("\(name) is about to perform a heal...")
+        print("\(name) heals up by \(healPoints) hit points")
     }
 }
