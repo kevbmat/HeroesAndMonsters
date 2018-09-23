@@ -24,14 +24,15 @@ class DungeonCharacter {
         self.opponentHitChance = opponentHitChance
     }
     
-    func attack(enemy: DungeonCharacter) {
+    func attack(enemy: inout Monster) {
         let chance = Double.random(in: 0...1)
         if chance <= opponentHitChance {
             let damage = Int.random(in: damageRange.min...damageRange.max)
             enemy.hitPoints -= damage
-            print("You have dealt \(damage) damage!")
+            print("\(name) successfully attacks \(enemy.name)")
+            print("\(enemy.name) got attacked for \(damage) points")
         } else {
-            print("Attack failed :(")
+            print("\(name) failed to attack \(enemy.name)")
         }
     }
 }

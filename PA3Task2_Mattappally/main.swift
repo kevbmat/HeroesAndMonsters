@@ -9,4 +9,4 @@
 import Foundation
 
 var game: HeroesVersusMonsters = HeroesVersusMonsters()
-game.introduction()
+game.gameDriver()
