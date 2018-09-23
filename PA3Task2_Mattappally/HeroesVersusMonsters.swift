@@ -15,6 +15,7 @@ class HeroesVersusMonsters {
     func gameDriver() {
         introduction()
         playerTurn()
+        computerTurn()
     }
     
     func introduction() {
@@ -54,6 +55,7 @@ class HeroesVersusMonsters {
     }
     
     func playerTurn() {
+        
         let turns = user.turns
         for i in 1...turns {
             displayTurnsAndStats(turnNumber: i, totalTurns: turns, currentPlayer: user, nextPlayer: enemy)
@@ -98,5 +100,6 @@ class HeroesVersusMonsters {
     func computerTurn() {
         displayTurnsAndStats(turnNumber: 1, totalTurns: 1, currentPlayer: enemy, nextPlayer: user)
         enemy.attack(enemy: &user)
+        print()
     }
 }

@@ -12,18 +12,6 @@ class Hero: DungeonCharacter {
     var chanceToBlock: Double
     var enemy: Monster
     var turns: Int
-    override var hitPoints: Int {
-        didSet {
-            if hitPoints < oldValue {
-                let chance = Double.random(in: 0...1)
-                print(chance)
-                if chance <= chanceToBlock {
-                    print("You blocked the enemy attack!")
-                    hitPoints = oldValue
-                }
-            }
-        }
-    }
     
     init() {
         chanceToBlock = 0.4
@@ -45,5 +33,17 @@ class Hero: DungeonCharacter {
     
     func specialAttack() {
         print("To be implemented by children")
+    }
+    
+    func attack(enemy: inout Monster) {
+        let chance = Double.random(in: 0...1)
+        if chance <= opponentHitChance {
+            let damage = Int.random(in: damageRange.min...damageRange.max)
+            enemy.hitPoints -= damage
+            print("\(name) successfully attacks \(enemy.name)")
+            print("\(enemy.name) got attacked for \(damage) points")
+        } else {
+            print("\(name) failed to attack \(enemy.name)")
+        }
     }
 }

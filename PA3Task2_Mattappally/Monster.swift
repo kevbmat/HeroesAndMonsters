@@ -35,4 +35,20 @@ class Monster: DungeonCharacter {
             print("\(name) has failed to heal at this time")
         }
     }
+    
+    func attack(enemy: inout Hero) {
+        let chance = Double.random(in: 0...1)
+        if chance <= opponentHitChance {
+            let blockChance = Double.random(in: 0...1)
+            if blockChance <= enemy.chanceToBlock {
+                print("\(enemy.name) has succesfully blocked \(name)'s attack!")
+            } else {
+                let damage = Int.random(in: damageRange.min...damageRange.max)
+                enemy.hitPoints -= damage
+                print("\(name) successfully attacks \(enemy.name) for \(damage) points")
+            }
+        } else {
+            print("\(name) failed to attack \(enemy.name)")
+        }
+    }
 }
