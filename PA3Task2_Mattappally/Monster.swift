@@ -37,6 +37,7 @@ class Monster: DungeonCharacter {
     }
     
     func attack(enemy: inout Hero) {
+        print("\(name) is attempting to attack \(enemy.name)...")
         let chance = Double.random(in: 0...1)
         if chance <= opponentHitChance {
             let blockChance = Double.random(in: 0...1)

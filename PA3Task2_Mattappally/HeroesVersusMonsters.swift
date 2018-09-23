@@ -73,7 +73,7 @@ class HeroesVersusMonsters {
                 endGame()
             }
             displayTurnsAndStats(turnNumber: i, totalTurns: turns, currentPlayer: user, nextPlayer: enemy)
-            print("\tPlease choose yoru attack from the following menu")
+            print("\tPlease choose your attack from the following menu")
             print("\t\t1) Normal Attack")
             print("\t\t2) Special Attack")
             print("\t\t3) Quit Game")
@@ -91,6 +91,8 @@ class HeroesVersusMonsters {
             default:
                 doNormalAttack()
             }
+            print("\nPress enter to continue")
+            _ = readLine()
         }
     }
     
@@ -103,8 +105,6 @@ class HeroesVersusMonsters {
     func doNormalAttack() {
         user.attack(enemy: &enemy)
         enemy.heal()
-        print("\t\(user.name): \(user.hitPoints)")
-        print("\t\(enemy.name): \(enemy.hitPoints)\n")
     }
     
     func doSpecialAttack() {
@@ -118,7 +118,8 @@ class HeroesVersusMonsters {
         }
         displayTurnsAndStats(turnNumber: 1, totalTurns: 1, currentPlayer: enemy, nextPlayer: user)
         enemy.attack(enemy: &user)
-        print()
+        print("\nPress enter to continue ")
+        _ = readLine()
     }
     
     func endGame() {
