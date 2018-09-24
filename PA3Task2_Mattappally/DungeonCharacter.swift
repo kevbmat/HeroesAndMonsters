@@ -13,7 +13,7 @@ class DungeonCharacter {
     var hitPoints: Int
     let attackSpeed: Int
     let damageRange: (min: Int, max: Int)
-    let opponentHitChance: Double
+    var opponentHitChance: Double
     
     init(name: String, hitPoints: Int, attackSpeed: Int, damageRange: (min: Int, max: Int), opponentHitChance: Double) {
         self.name = name

@@ -12,4 +12,10 @@ class Gremlin: Monster {
     init(name: String) {
         super.init(name: name, hitPoints: 70, attackSpeed: 5, damageRange: (min: 15, max: 30), chanceToHeal: 0.4, healRange: (min: 20, max: 40), opponentHitChance: 0.8)
     }
+    
+    override func specialAttack(enemy: inout Hero) {
+        print("\(name) has activated INSTA HEAL...")
+        hitPoints += healRange.max
+        print("\(name) has instantly healed up \(healRange.max) hitpoints")
+    }
 }

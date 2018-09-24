@@ -38,8 +38,12 @@ class Monster: DungeonCharacter {
     
     func attack(enemy: inout Hero) {
         print("\(name) is attempting to attack \(enemy.name)...")
-        let chance = Double.random(in: 0...1)
-        if chance <= opponentHitChance {
+        let hitChance = Double.random(in: 0...1)
+        let specialAttackChance = Double.random(in: 0...1)
+        if specialAttackChance <= 0.3 {
+            print("\(name) has activated a special ability...")
+            specialAttack(enemy: &enemy)
+        } else if hitChance <= opponentHitChance {
             let blockChance = Double.random(in: 0...1)
             if blockChance <= enemy.chanceToBlock {
                 print("\(enemy.name) has succesfully blocked \(name)'s attack!")
@@ -51,5 +55,9 @@ class Monster: DungeonCharacter {
         } else {
             print("\(name) failed to attack \(enemy.name)")
         }
+    }
+    
+    func specialAttack(enemy: inout Hero) {
+        print("To be implemented by children")
     }
 }

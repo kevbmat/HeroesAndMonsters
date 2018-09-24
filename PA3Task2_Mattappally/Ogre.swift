@@ -12,4 +12,10 @@ class Ogre: Monster {
     init(name: String) {
         super.init(name: name, hitPoints: 200, attackSpeed: 2, damageRange: (min: 30, max: 60), chanceToHeal: 0.1, healRange: (min: 30, max: 60), opponentHitChance: 0.6)
     }
+    
+    override func specialAttack(enemy: inout Hero) {
+        print("\(name) has activated MAX SLAM...")
+        enemy.hitPoints -= damageRange.max
+        print("\(name) has slammed \(damageRange.max) hitpoints out of \(enemy.name)")
+    }
 }
