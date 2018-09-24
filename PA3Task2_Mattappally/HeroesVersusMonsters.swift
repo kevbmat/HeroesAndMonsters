@@ -66,12 +66,13 @@ class HeroesVersusMonsters {
     }
     
     func playerTurn() {
-        for i in 1...user.turns {
+        var currentTurn: Int = 1
+        while currentTurn <= user.turns {
             if user.hitPoints <= 0 || enemy.hitPoints <= 0 {
                 gameOver = true
                 endGame()
             }
-            displayTurnsAndStats(turnNumber: i, totalTurns: user.turns, currentPlayer: user, nextPlayer: enemy)
+            displayTurnsAndStats(turnNumber: currentTurn, totalTurns: user.turns, currentPlayer: user, nextPlayer: enemy)
             print("\tPlease choose your attack from the following menu")
             print("\t\t1) Normal Attack")
             print("\t\t2) Special Attack")
@@ -90,6 +91,7 @@ class HeroesVersusMonsters {
             default:
                 doNormalAttack()
             }
+            currentTurn += 1
             print("\nPress enter to continue")
             _ = readLine()
         }

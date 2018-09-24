@@ -8,14 +8,6 @@
 
 import Foundation
 
-var end = 5
-for i in 1...end {
-    print(i)
-    if i % 2 == 0 {
-        end += 1
-    }
-}
-
 var game: HeroesVersusMonsters = HeroesVersusMonsters()
 game.gameDriver()
 
