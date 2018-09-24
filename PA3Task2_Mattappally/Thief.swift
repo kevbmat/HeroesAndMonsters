@@ -20,8 +20,11 @@ class Thief: Hero {
             print("\(name)'s surprise attack was caught by \(enemy.name)!")
         } else if attackChance > 0.2 && attackChance <= 0.6 {
             print("\(name)'s surprise attack was never seen! \(name) gets +1 turn")
+            turns += 1
+            game.doNormalAttack()
         } else {
             print("\(name)'s suprise attack halfway succeeds, plays a normal attack.")
+            game.doNormalAttack()
         }
     }
 }

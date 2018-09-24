@@ -66,13 +66,12 @@ class HeroesVersusMonsters {
     }
     
     func playerTurn() {
-        let turns = user.turns
-        for i in 1...turns {
+        for i in 1...user.turns {
             if user.hitPoints <= 0 || enemy.hitPoints <= 0 {
                 gameOver = true
                 endGame()
             }
-            displayTurnsAndStats(turnNumber: i, totalTurns: turns, currentPlayer: user, nextPlayer: enemy)
+            displayTurnsAndStats(turnNumber: i, totalTurns: user.turns, currentPlayer: user, nextPlayer: enemy)
             print("\tPlease choose your attack from the following menu")
             print("\t\t1) Normal Attack")
             print("\t\t2) Special Attack")
@@ -94,6 +93,7 @@ class HeroesVersusMonsters {
             print("\nPress enter to continue")
             _ = readLine()
         }
+        user.turns = user.attackSpeed / enemy.attackSpeed
     }
     
     func displayTurnsAndStats(turnNumber: Int, totalTurns: Int, currentPlayer: DungeonCharacter, nextPlayer: DungeonCharacter) {
@@ -132,7 +132,9 @@ class HeroesVersusMonsters {
         let playAgainOptional = readLine()
         if let playAgain = playAgainOptional {
             if playAgain[playAgain.startIndex] == "y" || playAgain[playAgain.startIndex] == "Y" {
-                gameDriver()
+                gameOver = false
+                game = HeroesVersusMonsters()
+                game.gameDriver()
             } else {
                 print("Exiting game...Thanks for playing!")
                 exit(0)
