@@ -1,24 +1,32 @@
-//
-//  HeroesVersusMonsters.swift
-//  PA3Task2_Mattappally
-//
-//  Created by Kevin Mattappally on 9/22/18.
-//  Copyright © 2018 Kevin Mattappally. All rights reserved.
-//
+// Heroes vs Monsters game
+// A game in which the user battles against the
+// computer to the death! The user chooses a hero to play
+// as and the computer randomly chooses a monster to battle
+// the user with. Last character standing wins!
+// CPSC 315
+// Programming Assignment #3
+// Kevin Mattappally
+// 09/24/2018
+// HeroesVersusMonsters.swift
 
 import Foundation
 
+// the main driver class for the entire game
 class HeroesVersusMonsters {
     var enemy: Monster
     var user: Hero
     var gameOver: Bool
     
+    // initializes the game state
     init() {
         enemy = Monster()
         user = Hero()
         gameOver = false
     }
     
+    // game loop that drives the whole game. Loops through
+    // the player and computer turns while it checks
+    // each time if the game is over
     func gameDriver() {
         introduction()
         while !gameOver {
@@ -29,6 +37,9 @@ class HeroesVersusMonsters {
         }
     }
     
+    // introduces the game to the user. Gives the user
+    // options for what hero they want to be, and the computer
+    // randomly chooses a monster
     func introduction() {
         var name: String = "Johnny"
         let chooseEnemy = Int.random(in: 0...2)
@@ -65,6 +76,9 @@ class HeroesVersusMonsters {
         print("\(user.name) is battling \(enemy.name)\n")
     }
     
+    // represents the player turn. Gives the user options
+    // regarding the type of attack they want to do on the
+    // enemy.
     func playerTurn() {
         var currentTurn: Int = 1
         while currentTurn <= user.turns {
@@ -98,21 +112,26 @@ class HeroesVersusMonsters {
         user.turns = user.attackSpeed / enemy.attackSpeed
     }
     
+    // displays the current statistics regarding each player and their hitpoints.
     func displayTurnsAndStats(turnNumber: Int, totalTurns: Int, currentPlayer: DungeonCharacter, nextPlayer: DungeonCharacter) {
         print("~~~~\(currentPlayer.name)'s turn (\(turnNumber) of \(totalTurns))~~~~")
         print("\t\(currentPlayer.name): \(currentPlayer.hitPoints) hit points")
         print("\t\(nextPlayer.name): \(nextPlayer.hitPoints) hit points\n")
     }
     
+    // represents the user attacking the enemy
     func doNormalAttack() {
         user.attack(enemy: &enemy)
         enemy.heal()
     }
     
+    // represents the user doing a special
+    // attack on the enemy
     func doSpecialAttack() {
         user.specialAttack()
     }
     
+    // represents the computer turn
     func computerTurn() {
         if user.hitPoints <= 0 || enemy.hitPoints <= 0 {
             gameOver = true
@@ -124,6 +143,9 @@ class HeroesVersusMonsters {
         _ = readLine()
     }
     
+    // end game function that gets called if either the
+    // hero or monster has lost all of their hitpoints. Gives
+    // the user the option to play again.
     func endGame() {
         if user.hitPoints <= 0 {
             print("\(user.name) has died")

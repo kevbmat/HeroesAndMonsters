@@ -1,13 +1,17 @@
-//
-//  DungeonCharacter.swift
-//  PA3Task2_Mattappally
-//
-//  Created by Kevin Mattappally on 9/18/18.
-//  Copyright © 2018 Kevin Mattappally. All rights reserved.
-//
+// Heroes vs Monsters game
+// A game in which the user battles against the
+// computer to the death! The user chooses a hero to play
+// as and the computer randomly chooses a monster to battle
+// the user with. Last character standing wins!
+// CPSC 315
+// Programming Assignment #3
+// Kevin Mattappally
+// 09/24/2018
+// DungeonCharacter.swift
 
 import Foundation
 
+// represents any character in the game
 class DungeonCharacter {
     let name: String
     var hitPoints: Int
@@ -15,6 +19,7 @@ class DungeonCharacter {
     let damageRange: (min: Int, max: Int)
     var opponentHitChance: Double
     
+    // initializes tbe cbaracter
     init(name: String, hitPoints: Int, attackSpeed: Int, damageRange: (min: Int, max: Int), opponentHitChance: Double) {
         self.name = name
         self.hitPoints = hitPoints
