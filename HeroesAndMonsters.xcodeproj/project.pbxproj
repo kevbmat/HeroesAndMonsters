@@ -61,7 +61,7 @@
 		3638B1FC21516D4F00CB6F9D = {
 			isa = PBXGroup;
 			children = (
-				3638B20721516D4F00CB6F9D /* PA3Task2_Mattappally */,
+				3638B20721516D4F00CB6F9D /* HeroesAndMonsters */,
 				3638B20621516D4F00CB6F9D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,7 +74,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3638B20721516D4F00CB6F9D /* PA3Task2_Mattappally */ = {
+		3638B20721516D4F00CB6F9D /* HeroesAndMonsters */ = {
 			isa = PBXGroup;
 			children = (
 				3638B20821516D4F00CB6F9D /* main.swift */,
@@ -89,7 +89,7 @@
 				36262B8221522DD7007F75BE /* Skeleton.swift */,
 				366015CE2157361E002BDB5C /* HeroesVersusMonsters.swift */,
 			);
-			path = PA3Task2_Mattappally;
+			path = HeroesAndMonsters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +128,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3638B20021516D4F00CB6F9D /* Build configuration list for PBXProject "PA3Task2_Mattappally" */;
+			buildConfigurationList = 3638B20021516D4F00CB6F9D /* Build configuration list for PBXProject "HeroesAndMonsters" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -301,7 +301,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3638B20021516D4F00CB6F9D /* Build configuration list for PBXProject "PA3Task2_Mattappally" */ = {
+		3638B20021516D4F00CB6F9D /* Build configuration list for PBXProject "HeroesAndMonsters" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3638B20A21516D4F00CB6F9D /* Debug */,
